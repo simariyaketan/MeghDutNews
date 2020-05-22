@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dimen_10"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dimen_10">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:button="@drawable/notification_checkbox_selector" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:fontFamily="@font/shruti"
+            android:includeFontPadding="false"
+            android:text="મુખ્ય સમાચાર"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/font_16" />
+
+    </LinearLayout>
+</layout>

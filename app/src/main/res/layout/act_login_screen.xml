@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linFooter"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:src="@drawable/logo_signup" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    app:cardCornerRadius="@dimen/dimen_20"
+                    app:cardElevation="@dimen/dimen_20"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_15">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/raleway_extrabold"
+                            android:includeFontPadding="false"
+                            android:paddingBottom="@dimen/dimen_15"
+                            android:text="@string/sign_in"
+                            android:textColor="@color/color_272727"
+                            android:textSize="@dimen/font_20" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_8"
+                                android:background="@drawable/border_radious_red_edittex"
+                                android:fontFamily="@font/lato"
+                                android:hint="@string/mobile_number"
+                                android:imeOptions="actionDone"
+                                android:includeFontPadding="false"
+                                android:padding="@dimen/dimen_15"
+                                android:textColor="@color/color_272727"
+                                android:textColorHint="@color/color_B6B6B6"
+                                android:textSize="@dimen/font_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dimen_15"
+                                android:background="@color/color_ffffff"
+                                android:fontFamily="@font/raleway_medium"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="@dimen/dimen_5"
+                                android:paddingRight="@dimen/dimen_5"
+                                android:text="@string/mobile_number"
+                                android:textColor="@color/color_30272727"
+                                android:textSize="@dimen/font_14" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtSignIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_30"
+                            android:background="@drawable/border_rounded_red_button"
+                            android:fontFamily="@font/raleway_bold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:padding="@dimen/dimen_15"
+                            android:text="@string/sign_in"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="@dimen/font_16" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dimen_100"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:layout_marginBottom="@dimen/dimen_20">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen_1"
+                                android:layout_centerInParent="true"
+                                android:background="@color/color_B8B8B8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@color/color_ffffff"
+                                android:fontFamily="@font/raleway_bold"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dimen_5"
+                                android:paddingRight="@dimen/dimen_5"
+                                android:text="@string/or"
+                                android:textColor="@color/color_B8B8B8"
+                                android:textSize="@dimen/font_16" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_rounded_blue_button"
+                            android:fontFamily="@font/raleway_semibold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:padding="@dimen/dimen_15"
+                            android:text="@string/sign_in_with_facebook"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="@dimen/font_16" />
+
+                        <LinearLayout
+                            android:id="@+id/lindontHaveAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/raleway_medium"
+                                android:includeFontPadding="false"
+                                android:text="@string/dont_have_an_account"
+                                android:textColor="@color/color_9D9E9E"
+                                android:textSize="@dimen/font_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dimen_5"
+                                android:fontFamily="@font/raleway_bold"
+                                android:includeFontPadding="false"
+                                android:text="@string/sing_up_small"
+                                android:textColor="@color/color_EA1F25"
+                                android:textSize="@dimen/font_16" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/linFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_20">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/terms_checkbox_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_10"
+                android:fontFamily="@font/raleway"
+                android:includeFontPadding="false"
+                android:text="@string/i_agree_with_meghdutnews"
+                android:textColor="@color/color_272727"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:fontFamily="@font/raleway_medium"
+                android:includeFontPadding="false"
+                android:text="@string/terms"
+                android:textColor="@color/color_EA1F25"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:fontFamily="@font/raleway_medium"
+                android:includeFontPadding="false"
+                android:text="@string/and"
+                android:textColor="@color/color_272727"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:fontFamily="@font/raleway"
+                android:includeFontPadding="false"
+                android:text="@string/conditions"
+                android:textColor="@color/color_EA1F25"
+                android:textSize="@dimen/font_14" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

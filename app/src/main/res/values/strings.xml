@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">MeghDutNews</string>
+
+    <!-- Sign In Screen -->
+    <string name="sign_in">SIGN IN</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="or">OR</string>
+    <string name="sign_in_with_facebook">Sign in with facebook</string>
+    <string name="dont_have_an_account">Don\'n have an account?</string>
+    <string name="sing_up_small">Sign Up</string>
+    <string name="i_agree_with_meghdutnews">I agree with meghdutnews</string>
+    <string name="terms">Terms</string>
+    <string name="and">and</string>
+    <string name="conditions">Conditions</string>
+
+    <!-- Sign Up Screen -->
+    <string name="sign_up">SIGN UP</string>
+    <string name="name">Name</string>
+    <string name="sign_up_with_facebook">Sign up with facebook</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in_small">Sign In</string>
+
+    <!-- OTP Screen -->
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_the_OTP_received_in">Enter the OTP received in</string>
+    <string name="dont_receive_the_otp">Don\'t receive the OTP?</string>
+    <string name="resend_otp">RESEND OTP</string>
+
+    <!-- App Detail Screen -->
+    <string name="cancel">રદ કરો</string>
+    <string name="next">આગળ</string>
+    <string name="screen_one_detail">મેઘદૂત એપ્લિકેશન માં તમારું સ્વાગત છે. એપ્લિકેશન ની અમુક માહિતી આપેલી જેનાથી આપણે એપ્લિકેશન ઉપયોગ કરવામાં સરળતા રહેશે।</string>
+    <string name="screen_two_detail">તમારી અનુકૂળતા માટે એપ્લિકેશન સેટેટિંગ્સની અંદર નાઇટ મોડની સુવિધા આપેલી છે. જેનાથી તમે રાત્રે સરળતાથી વાંચી શકશો.</string>
+    <string name="screen_three_detail">સેટેટિંગ્સમાં જઇને તમે અક્ષરની સાઇઝ નાની-મોટી કરી શકો છો.</string>
+    <string name="screen_four_detail">નોટિફીકેશન્સ સેટેટિંગ્સ દ્વારા તમે નોટિફીકેશન્સ ચાલુ અથવા બંધ કરી શકો છો. તેના સિવાય તમે નોટિફીકેશન્સ સમય પણ ચાલુ બંધ કરી શકો છો.</string>
+    <string name="screen_five_detail">તમને ગમતા સમાચારને તમે સોશિયલ મીડિયા શેર દ્વારા તમારા મિત્રો અને સગા સંબધિઓ સુધી પહોચાડી શકો છો.</string>
+    <string name="screen_six_detail">રાઇટ સ્વાઇપ કરો ન્યુઝ ડીઇટીલ વાચવા માટે.</string>
+    <string name="personal_appliation">વ્યક્તિગત એપ્લિકેશન</string>
+    <string name="choose_favorite_news">તમને રસ હોય તેવા સમાચારની પ્રિય શ્રેણીઓ પસંદ કરો.</string>
+    
+    <!-- Setting Screen -->
+    <string name="category">કેટેગરી</string>
+    <string name="setting">સેટિંગ્સ</string>
+    <string name="night_mode">નાઇટ મોડ</string>
+    <string name="start">ચાલુ</string>
+    <string name="stope">બંધ</string>
+    <string name="auto">ઓટો</string>
+    <string name="character_size">અક્ષરની સાઇઝ</string>
+    <string name="small">નાની</string>
+    <string name="large">મોટી</string>
+    <string name="reguler">રેગ્યુલર</string>
+    <string name="application_cash">એપ્લિકેશન કેશ</string>
+    <string name="notification">નોટિફીકેશન્સ</string>
+    <string name="stope_notification_time">નોટિફીકેશન્સ બંધ સમય</string>
+
+    <!-- News Screen -->
+    <string name="share">શેર</string>
+
+</resources>

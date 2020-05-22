@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:fontFamily="@font/shruti"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="@string/personal_appliation"
+            android:textAlignment="center"
+            android:textColor="@color/color_272727"
+            android:textSize="@dimen/font_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/shruti"
+            android:includeFontPadding="false"
+            android:text="@string/choose_favorite_news"
+            android:textColor="@color/color_272727"
+            android:textSize="@dimen/font_16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@color/color_20272727" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recPersonalApp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

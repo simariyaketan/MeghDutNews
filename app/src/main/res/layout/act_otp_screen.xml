@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_15"
+            android:src="@drawable/back_icon_black" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linFooter"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/logo_signup" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    app:cardCornerRadius="@dimen/dimen_20"
+                    app:cardElevation="@dimen/dimen_20"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_15">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/raleway_extrabold"
+                            android:includeFontPadding="false"
+                            android:paddingTop="@dimen/dimen_15"
+                            android:paddingBottom="@dimen/dimen_30"
+                            android:text="@string/otp_verification"
+                            android:textColor="@color/color_272727"
+                            android:textSize="@dimen/font_20" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/dimen_30">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="@dimen/dimen_5"
+                                android:fontFamily="@font/raleway_medium"
+                                android:includeFontPadding="false"
+                                android:text="@string/enter_the_OTP_received_in"
+                                android:textColor="@color/color_B6B6B6"
+                                android:textSize="@dimen/font_14" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/lato_bold"
+                                android:includeFontPadding="false"
+                                android:text="+91 1234567890"
+                                android:textColor="@color/color_272727"
+                                android:textSize="@dimen/font_14" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="@dimen/dimen_20"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtOtpOne"
+                                android:layout_width="@dimen/dimen_50"
+                                android:layout_height="@dimen/dimen_50"
+                                android:background="@drawable/border_rounded_red_edittex"
+                                android:fontFamily="@font/lato_bold"
+                                android:gravity="center"
+                                android:maxLength="1"
+                                android:textColor="@color/color_272727"
+                                android:textSize="@dimen/font_16"
+                                android:inputType="number"
+                                android:focusableInTouchMode="true"/>
+
+                            <EditText
+                                android:id="@+id/edtOtpTwo"
+                                android:layout_width="@dimen/dimen_50"
+                                android:layout_height="@dimen/dimen_50"
+                                android:layout_marginLeft="@dimen/dimen_15"
+                                android:background="@drawable/border_rounded_gray_edittex"
+                                android:fontFamily="@font/lato_bold"
+                                android:gravity="center"
+                                android:maxLength="1"
+                                android:textColor="@color/color_272727"
+                                android:textSize="@dimen/font_16"
+                                android:inputType="number"/>
+
+                            <EditText
+                                android:id="@+id/edtOtpThree"
+                                android:layout_width="@dimen/dimen_50"
+                                android:layout_height="@dimen/dimen_50"
+                                android:layout_marginLeft="@dimen/dimen_15"
+                                android:background="@drawable/border_rounded_gray_edittex"
+                                android:fontFamily="@font/lato_bold"
+                                android:gravity="center"
+                                android:maxLength="1"
+                                android:textColor="@color/color_272727"
+                                android:textSize="@dimen/font_16"
+                                android:inputType="number"/>
+
+                            <EditText
+                                android:id="@+id/edtOtpFour"
+                                android:layout_width="@dimen/dimen_50"
+                                android:layout_height="@dimen/dimen_50"
+                                android:layout_marginLeft="@dimen/dimen_15"
+                                android:background="@drawable/border_rounded_gray_edittex"
+                                android:fontFamily="@font/lato_bold"
+                                android:gravity="center"
+                                android:maxLength="1"
+                                android:textColor="@color/color_272727"
+                                android:textSize="@dimen/font_16"
+                                android:inputType="number"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/lindontHaveAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/dont_receive_the_otp"
+                        android:textColor="@color/color_9D9E9E"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:fontFamily="@font/raleway_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/resend_otp"
+                        android:textColor="@color/color_EA1F25"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</layout>
