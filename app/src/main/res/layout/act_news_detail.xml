@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="nighDayColor"
+            type="com.meghdut.news.model.NightDayColor" />
+        <variable
+            name="fontSize"
+            type="com.meghdut.news.model.FontSize" />
+        <import type="android.text.Html" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="newsDetail"
+            type="com.meghdut.news.model.news.NewsData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{nighDayColor.background_color}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/relNewsShare"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_EA1F25">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/shruti"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/dimen_13"
+                        android:text="@{newsDetail.city}"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@{fontSize.font18}" />
+
+
+                    <ImageView
+                        android:id="@+id/imgBackIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:paddingRight="@dimen/dimen_15"
+                        android:src="@drawable/back_icon" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtNewShortDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:fontFamily="@font/shruti_bold"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:text="@{Html.fromHtml(newsDetail.shortContent)}"
+                    android:textColor="@color/color_EA1F25"
+                    android:textSize="@{fontSize.font18}" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    app:cardCornerRadius="@dimen/dimen_5"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relNewsMedia"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:newsImage="@{newsDetail.file}" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_20">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/clock" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dimen_15"
+                            android:fontFamily="@font/shruti"
+                            android:includeFontPadding="false"
+                            android:maxLength="300"
+                            android:text="@{newsDetail.publishDateTime}"
+                            android:textColor="@color/color_737373"
+                            android:textSize="@{fontSize.font14}" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtSubscription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border_rounded_red"
+                        android:paddingLeft="@dimen/dimen_20"
+                        android:paddingTop="@dimen/dimen_10"
+                        android:paddingRight="@dimen/dimen_20"
+                        android:paddingBottom="@dimen/dimen_10"
+                        android:text="@string/subscribe"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@{fontSize.font16}" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_05"
+                    android:background="@{nighDayColor.gray_line_color}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:fontFamily="@font/shruti"
+                    android:includeFontPadding="false"
+                    android:text="@{Html.fromHtml(newsDetail.content)}"
+                    android:textColor="@{nighDayColor.gray_text_color}"
+                    android:textSize="@{fontSize.font16}" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/imgVideoPlayIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/play_icon"
+            android:visibility="@{newsDetail.fileType.equals(`image`) ? View.GONE : View.VISIBLE}" />
+    </RelativeLayout>
+</layout>

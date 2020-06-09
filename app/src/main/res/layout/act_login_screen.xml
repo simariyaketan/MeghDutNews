@@ -56,6 +56,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
+                                android:id="@+id/edtMobileNo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dimen_8"
@@ -64,6 +65,7 @@
                                 android:hint="@string/mobile_number"
                                 android:imeOptions="actionDone"
                                 android:includeFontPadding="false"
+                                android:inputType="number"
                                 android:padding="@dimen/dimen_15"
                                 android:textColor="@color/color_272727"
                                 android:textColorHint="@color/color_B6B6B6"
@@ -127,6 +129,7 @@
                         </RelativeLayout>
 
                         <TextView
+                            android:id="@+id/txtLoginWithFB"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/border_rounded_blue_button"
@@ -185,11 +188,13 @@
             android:paddingBottom="@dimen/dimen_20">
 
             <CheckBox
+                android:id="@+id/chkTermsCond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@drawable/terms_checkbox_selector" />
 
             <TextView
+                android:id="@+id/txtTermsCondition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

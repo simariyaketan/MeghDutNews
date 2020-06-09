@@ -7,25 +7,38 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.google.gson.Gson
 import com.meghdut.news.R
 import com.meghdut.news.databinding.ActOtpScreenBinding
+import com.meghdut.news.helper.Common
+import com.meghdut.news.helper.PreferenceField
+import com.meghdut.news.model.login.LoginClass
+import com.meghdut.news.model.login.UserData
+import com.meghdut.news.network.WebAPIClient
+import com.pixplicity.easyprefs.library.Prefs
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class ActOtpScreen : AppCompatActivity() {
+class ActOtpScreen : ActBase() {
+
+    var user_token: String = ""
+    lateinit var mobile_number: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val actOtpScreenBinding: ActOtpScreenBinding =
             DataBindingUtil.setContentView(this, R.layout.act_otp_screen)
 
+        user_token = intent.getStringExtra("token")
+        mobile_number = intent.getStringExtra("mobile_number")
+
         actOtpScreenBinding.imgBack.setOnClickListener {
             finish()
         }
 
+        actOtpScreenBinding.txtMobileNum.setText("+91" + mobile_number)
 
 
         actOtpScreenBinding.edtOtpOne.addTextChangedListener(object : TextWatcher {
@@ -132,9 +145,10 @@ class ActOtpScreen : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (actOtpScreenBinding.edtOtpFour.length() == 1) {
                     actOtpScreenBinding.edtOtpFour.clearFocus()
-                    val adi = Intent(this@ActOtpScreen, ActAppDetials::class.java)
-                    startActivity(adi)
-                    finish()
+
+                    var otp_input: String =
+                        actOtpScreenBinding.edtOtpOne.text.toString() + actOtpScreenBinding.edtOtpTwo.text.toString() + actOtpScreenBinding.edtOtpThree.text.toString() + actOtpScreenBinding.edtOtpFour.text.toString()
+                    VeryfyOTP(otp_input)
                 }
             }
 
@@ -156,5 +170,81 @@ class ActOtpScreen : AppCompatActivity() {
             }
 
         })
+    }
+
+
+    private fun VeryfyOTP(otp_input: String) {
+
+        showLoader()
+        WebAPIClient.getInstance(this)
+            .checkInternet()
+            ?.verifyOTP(user_token, otp_input,
+                object : Callback<LoginClass> {
+                    override fun onFailure(call: Call<LoginClass>, t: Throwable) {
+                        Common.ShowErrorMessage(activity!!, "", null, 0)
+                        closeLoader()
+                    }
+
+                    override fun onResponse(
+                        call: Call<LoginClass>,
+                        response: Response<LoginClass>
+                    ) {
+
+                        response.body()?.apply {
+                            takeIf { status }?.let {
+
+                                LoginApiCall(mobile_number)
+
+
+                            } ?: let {
+                                closeLoader()
+                                Common.ShowToast(activity!!, message)
+                            }
+                        }
+                    }
+                })
+
+    }
+
+    private fun LoginApiCall(mobile_nu: String) {
+        val device_token = Prefs.getString(PreferenceField.DEVICE_TOKEN,"123")
+        WebAPIClient.getInstance(this)
+            .checkInternet()
+            ?.LoginApi(mobile_nu, "","", "Android", device_token,
+                object : Callback<LoginClass> {
+                    override fun onFailure(call: Call<LoginClass>, t: Throwable) {
+                        Common.ShowErrorMessage(activity!!, "", null, 0)
+                        closeLoader()
+                    }
+
+                    override fun onResponse(
+                        call: Call<LoginClass>,
+                        response: Response<LoginClass>
+                    ) {
+                        closeLoader()
+                        response.body()?.apply {
+                            takeIf { status }?.let {
+
+                                Prefs.putString(
+                                    PreferenceField.LOGIN,
+                                    Gson().toJson(userdata)
+                                )
+                                Prefs.putString(
+                                    PreferenceField.Token,
+                                    token
+                                )
+
+                                val adi = Intent(this@ActOtpScreen, ActAppDetials::class.java)
+                                startActivity(adi)
+                                finish()
+
+                            } ?: let {
+                                Common.ShowToast(activity!!, message)
+                            }
+                        }
+
+                    }
+
+                })
     }
 }

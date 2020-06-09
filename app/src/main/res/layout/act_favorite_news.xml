@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="nighDayColor"
+            type="com.meghdut.news.model.NightDayColor" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{nighDayColor.background_color}"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vipFavoriteNews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_EA1F25">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingTop="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_15"
+                android:src="@drawable/header_image" />
+
+            <ImageView
+                android:id="@+id/imgBackIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:src="@drawable/back_icon" />
+
+            <ImageView
+                android:id="@+id/imgRemoveToFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:src="@drawable/add_icon" />
+        </RelativeLayout>
+
+        <com.meghdut.news.viewpager.VerticalViewPager
+            android:id="@+id/vPagerFavNewsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone"></com.meghdut.news.viewpager.VerticalViewPager>
+
+        <RelativeLayout
+            android:id="@+id/relNoRecordFound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/lato_bold"
+                android:text="No Record Found.."
+                android:textColor="@color/color_272727"
+                android:textSize="@dimen/font_18" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

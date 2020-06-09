@@ -55,6 +55,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
+                                android:id="@+id/edtRegUserName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dimen_8"
@@ -90,6 +91,7 @@
                             android:layout_marginTop="@dimen/dimen_20">
 
                             <EditText
+                                android:id="@+id/edtRegMobileNo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dimen_8"
@@ -120,6 +122,7 @@
                         </RelativeLayout>
 
                         <TextView
+                            android:id="@+id/txtSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_30"
@@ -162,6 +165,7 @@
                         </RelativeLayout>
 
                         <TextView
+                            android:id="@+id/txtSignUpWithFB"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/border_rounded_blue_button"

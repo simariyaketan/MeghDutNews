@@ -2,11 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="nighDayColor"
+            type="com.meghdut.news.model.NightDayColor" />
+        <variable
+            name="fontSize"
+            type="com.meghdut.news.model.FontSize" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@{nighDayColor.background_color}">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,8 +61,8 @@
                     android:fontFamily="@font/shruti"
                     android:includeFontPadding="false"
                     android:text="@string/category"
-                    android:textColor="@color/color_000000"
-                    android:textSize="@dimen/font_20" />
+                    android:textColor="@{nighDayColor.black_text_color}"
+                    android:textSize="@{fontSize.font20}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -63,7 +72,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_1"
-                        android:background="@color/color_B8B8B8" />
+                        android:background="@{nighDayColor.setting_gray_line_color}" />
 
                     <View
                         android:layout_width="@dimen/dimen_100"
@@ -82,6 +91,20 @@
                     app:spanCount="3" />
 
                 <TextView
+                    android:id="@+id/txtViewMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/shruti_bold"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:text="@string/view_more"
+                    android:textColor="@color/color_EA1F25"
+                    android:textSize="@{fontSize.font18}"
+                    android:visibility="gone" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_30"
@@ -89,8 +112,8 @@
                     android:fontFamily="@font/shruti"
                     android:includeFontPadding="false"
                     android:text="@string/setting"
-                    android:textColor="@color/color_000000"
-                    android:textSize="@dimen/font_20" />
+                    android:textColor="@{nighDayColor.black_text_color}"
+                    android:textSize="@{fontSize.font20}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -100,7 +123,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_1"
-                        android:background="@color/color_B8B8B8" />
+                        android:background="@{nighDayColor.setting_gray_line_color}" />
 
                     <View
                         android:layout_width="@dimen/dimen_100"
@@ -117,14 +140,14 @@
                     android:fontFamily="@font/shruti"
                     android:includeFontPadding="false"
                     android:text="@string/night_mode"
-                    android:textColor="@color/color_222222"
-                    android:textSize="@dimen/font_20" />
+                    android:textColor="@{nighDayColor.text_color_222222}"
+                    android:textSize="@{fontSize.font20}" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
                     android:layout_marginTop="@dimen/dimen_5"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -136,15 +159,18 @@
                     android:weightSum="3">
 
                     <LinearLayout
+                        android:id="@+id/linNightModOn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/redNightModOn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:clickable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -153,20 +179,23 @@
                             android:fontFamily="@font/shruti"
                             android:includeFontPadding="false"
                             android:text="@string/start"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
+                            android:textColor="@{nighDayColor.black_text_color}"
+                            android:textSize="@{fontSize.font16}" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/linNightModOff"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/redNightModOff"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:clickable="false"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -175,8 +204,8 @@
                             android:fontFamily="@font/shruti"
                             android:includeFontPadding="false"
                             android:text="@string/stope"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
+                            android:textColor="@{nighDayColor.black_text_color}"
+                            android:textSize="@{fontSize.font16}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -184,22 +213,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimen_10"
-                            android:fontFamily="@font/shruti"
-                            android:includeFontPadding="false"
-                            android:text="@string/auto"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -207,7 +220,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,14 +230,14 @@
                     android:fontFamily="@font/shruti"
                     android:includeFontPadding="false"
                     android:text="@string/character_size"
-                    android:textColor="@color/color_222222"
-                    android:textSize="@dimen/font_20" />
+                    android:textColor="@{nighDayColor.text_color_222222}"
+                    android:textSize="@{fontSize.font20}" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
                     android:layout_marginTop="@dimen/dimen_5"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -236,15 +249,18 @@
                     android:weightSum="3">
 
                     <LinearLayout
+                        android:id="@+id/linSmallFont"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/radSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:clickable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -253,20 +269,23 @@
                             android:fontFamily="@font/shruti"
                             android:includeFontPadding="false"
                             android:text="@string/small"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
+                            android:textColor="@{nighDayColor.black_text_color}"
+                            android:textSize="@{fontSize.font16}" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/linRegFont"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/radReguler"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:clickable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -275,20 +294,23 @@
                             android:fontFamily="@font/shruti"
                             android:includeFontPadding="false"
                             android:text="@string/reguler"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
+                            android:textColor="@{nighDayColor.black_text_color}"
+                            android:textSize="@{fontSize.font16}" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/linBigFont"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/radBig"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/radio_button_selector"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:clickable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -297,8 +319,8 @@
                             android:fontFamily="@font/shruti"
                             android:includeFontPadding="false"
                             android:text="@string/large"
-                            android:textColor="@color/color_000000"
-                            android:textSize="@dimen/font_16" />
+                            android:textColor="@{nighDayColor.black_text_color}"
+                            android:textSize="@{fontSize.font16}" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -306,7 +328,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -316,13 +338,13 @@
                     android:fontFamily="@font/shruti"
                     android:includeFontPadding="false"
                     android:text="@string/application_cash"
-                    android:textColor="@color/color_222222"
-                    android:textSize="@dimen/font_20" />
+                    android:textColor="@{nighDayColor.text_color_222222}"
+                    android:textSize="@{fontSize.font20}" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -332,16 +354,18 @@
                     android:layout_marginBottom="@dimen/dimen_10">
 
                     <TextView
+                        android:id="@+id/txtAppSize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/shruti"
                         android:includeFontPadding="false"
                         android:text="6.9 MB"
-                        android:textColor="@color/color_222222"
-                        android:textSize="@dimen/font_20" />
+                        android:textColor="@{nighDayColor.text_color_222222}"
+                        android:textSize="@{fontSize.font20}" />
 
                     <ImageView
+                        android:id="@+id/imgDeleteCash"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -354,7 +378,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -368,8 +392,8 @@
                         android:fontFamily="@font/shruti"
                         android:includeFontPadding="false"
                         android:text="@string/notification"
-                        android:textColor="@color/color_222222"
-                        android:textSize="@dimen/font_20" />
+                        android:textColor="@{nighDayColor.text_color_222222}"
+                        android:textSize="@{fontSize.font20}" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -383,20 +407,36 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recNotificationCat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_20"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2" />
+
+                <TextView
+                    android:id="@+id/txtSaveNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/shruti_bold"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen_10"
+                    android:text="@string/save"
+                    android:textColor="@color/color_EA1F25"
+                    android:textSize="@{fontSize.font16}"
+                    android:visibility="visible" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -410,11 +450,12 @@
                         android:fontFamily="@font/shruti"
                         android:includeFontPadding="false"
                         android:text="@string/stope_notification_time"
-                        android:textColor="@color/color_222222"
-                        android:textSize="@dimen/font_20" />
+                        android:textColor="@{nighDayColor.text_color_222222}"
+                        android:textSize="@{fontSize.font20}" />
 
 
                     <Switch
+                        android:id="@+id/swiNotificationTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -422,12 +463,111 @@
 
                 </RelativeLayout>
 
+                <LinearLayout
+                    android:id="@+id/linNotificationTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/edtStartTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border_radious_red_edittex"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/start_time"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/dimen_15"
+                        android:textColor="@color/color_272727"
+                        android:textColorHint="@color/color_B6B6B6"
+                        android:textSize="@dimen/font_16"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:focusableInTouchMode="false"/>
+
+                    <EditText
+                        android:id="@+id/edtEndTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border_radious_red_edittex"
+                        android:fontFamily="@font/lato"
+                        android:hint="@string/end_time"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/dimen_15"
+                        android:textColor="@color/color_272727"
+                        android:textColorHint="@color/color_B6B6B6"
+                        android:textSize="@dimen/font_16"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:focusableInTouchMode="false"/>
+
+                    <TextView
+                        android:id="@+id/txtTimeSubmit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border_rounded_red_button"
+                        android:fontFamily="@font/raleway_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/dimen_15"
+                        android:text="@string/submit"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/font_16"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1"
                     android:layout_marginTop="@dimen/dimen_15"
-                    android:layout_marginBottom="@dimen/dimen_20"
-                    android:background="@color/color_B8B8B8" />
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
+
+                <TextView
+                    android:id="@+id/txtFavoriteNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:paddingTop="@dimen/dimen_20"
+                    android:paddingBottom="@dimen/dimen_10"
+                    android:fontFamily="@font/shruti"
+                    android:includeFontPadding="false"
+                    android:text="@string/favorite_news"
+                    android:textColor="@{nighDayColor.text_color_222222}"
+                    android:textSize="@{fontSize.font20}" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:background="@{nighDayColor.setting_gray_line_color}" />
+
+                <TextView
+                    android:id="@+id/txtLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:paddingTop="@dimen/dimen_20"
+                    android:paddingBottom="@dimen/dimen_10"
+                    android:fontFamily="@font/shruti"
+                    android:includeFontPadding="false"
+                    android:text="@string/logout"
+                    android:textColor="@{nighDayColor.text_color_222222}"
+                    android:textSize="@{fontSize.font20}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:background="@{nighDayColor.setting_gray_line_color}"
+                    android:paddingBottom="@dimen/dimen_20"/>
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

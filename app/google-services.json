@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "481412925830",
+    "firebase_url": "https://meghdutnews-24f89.firebaseio.com",
+    "project_id": "meghdutnews-24f89",
+    "storage_bucket": "meghdutnews-24f89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481412925830:android:c98e1d40fad15651cf8407",
+        "android_client_info": {
+          "package_name": "com.meghdut.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481412925830-3rgior4tgplip07f529tar22ikc85p72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meghdut.news",
+            "certificate_hash": "30c82c7d2c7bf4175ceed4130d334c8eb806f0e4"
+          }
+        },
+        {
+          "client_id": "481412925830-sq96abe2k3gka1mf9k98caj73eamp2bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwsZUZe2pO2eRJ399WCdp2MXMptKlx9q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481412925830-sq96abe2k3gka1mf9k98caj73eamp2bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

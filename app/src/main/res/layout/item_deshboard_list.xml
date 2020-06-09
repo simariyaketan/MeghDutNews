@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="nighDayColor"
+            type="com.meghdut.news.model.NightDayColor" />
+
+        <variable
+            name="fontSize"
+            type="com.meghdut.news.model.FontSize" />
+        <import type="android.view.View" />
+        <import type="android.text.Html" />
+
+        <variable
+            name="newsdata"
+            type="com.meghdut.news.model.news.NewsData" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_ffffff">
+        android:background="@{nighDayColor.background_color}">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -13,12 +31,34 @@
             android:orientation="vertical"
             android:padding="@dimen/dimen_20">
 
-            <RelativeLayout
-                android:id="@+id/relNewsMedia"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimen_5"
+                app:cardElevation="0dp">
 
-            </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/relNewsMedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:newsImage="@{newsdata.file}" />
+
+
+                    <ImageView
+                        android:id="@+id/imgVideoPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/play_icon"
+                        android:visibility="@{newsdata.fileType.equals(`image`) ? View.GONE : View.VISIBLE}" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -27,78 +67,129 @@
                 android:fontFamily="@font/shruti_bold"
                 android:includeFontPadding="false"
                 android:maxLines="2"
-                android:text="એરફોર્સનુ મિગ-29 વિમાન તુટી પડ્યુ, પાયલોટે સમય સૂચકતા વાપરીને જીવ બચાવ્યો"
+                android:text="@{Html.fromHtml(newsdata.title)}"
                 android:textColor="@color/color_EA1F25"
-                android:textSize="@dimen/font_18" />
+                android:textSize="@{fontSize.font18}" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginTop="@dimen/dimen_5"
                 android:fontFamily="@font/shruti"
                 android:includeFontPadding="false"
                 android:maxLength="300"
-                android:text="એરફોર્સનુ મિગ-29 વિમાન તુટી પડ્યુ, પાયલોટે સમય સૂચકતા વાપરીને જીવ બચાવ્યો ફાઈટર જેટ્સની કમીનો સામનો કરી રહેલી ભારતીય વાયુસેનાનુ વધુ એક ફાઈટર જેટ મિગ-29 પંજાબમાં ક્રેશ થયુ છે. સવારે રુટિન ટ્રેનિંગ માટે પાયલોટે મિગ 29 સાથે ઉડાન ભરી હતી.જોકે ટેકનિકલ ખામીના કારણે વિમાન હોશિયારપુર નજીક તુટી પડ્યુ હતુ.જોકે પાયલોટ સુરક્ષિત હોવાના અહેવાલો મળ્યા છે. આ વિમાન પાક બોર્ડર નજીક જ ક્રેશ થયુ છે.જ્યાં સેનાની એક્ટિવિટી એમ પણ વધારે રહેતી હોય છે."
-                android:textColor="@color/color_737373"
-                android:textSize="@dimen/font_16" />
+                android:text="@{Html.fromHtml(newsdata.shortContent)}"
+                android:textColor="@{nighDayColor.gray_text_color}"
+                android:textSize="@{fontSize.font16}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:fontFamily="@font/shruti"
+                    android:includeFontPadding="false"
+                    android:text="@{newsdata.city}"
+                    android:textColor="@color/color_EA1F25"
+                    android:textSize="@{fontSize.font14}" />
+
+                <View
+                    android:layout_width="@dimen/dimen_05"
+                    android:layout_height="@dimen/font_18"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:layout_marginRight="@dimen/dimen_5"
+                    android:background="@color/color_EA1F25" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:fontFamily="@font/shruti"
+                    android:includeFontPadding="false"
+                    android:text="@{`તા ` + newsdata.publishDate}"
+                    android:textColor="@color/color_EA1F25"
+                    android:textSize="@{fontSize.font14}" />
+            </LinearLayout>
         </LinearLayout>
 
 
         <RelativeLayout
             android:id="@+id/relNewsShare"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/color_20272727"
-            android:padding="@dimen/dimen_15">
+            android:layout_height="@dimen/dimen_90"
+            android:layout_alignParentBottom="true">
 
-            <TextView
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:newsImage="@{newsdata.blurImage}"
+                android:visibility="gone"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_15"
-                android:layout_toLeftOf="@+id/linRight"
-                android:fontFamily="@font/shruti_bold"
-                android:includeFontPadding="false"
-                android:text="એરફોર્સનુ મિગ-29 વિમાન તુટી પડ્યુ, પાયલોટે સમય સૂચકતા વાપરીને જીવ બચાવ્યો"
-                android:textColor="@color/color_ffffff"
-                android:textSize="@dimen/font_14" />
-
-            <LinearLayout
-                android:id="@+id/linRight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="@dimen/dimen_05"
-                    android:layout_height="@dimen/dimen_60"
-                    android:layout_marginLeft="@dimen/dimen_20"
-                    android:layout_marginRight="@dimen/dimen_20"
-                    android:background="@color/color_EA1F25" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/share_icon" />
+                android:background="@color/color_20272727"
+                android:padding="@dimen/dimen_15">
 
                 <TextView
+                    android:id="@+id/txtFooterSortContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="@dimen/dimen_5"
-                    android:fontFamily="@font/shruti"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/linRight"
+                    android:fontFamily="@font/shruti_bold"
                     android:includeFontPadding="false"
-                    android:paddingLeft="@dimen/dimen_10"
-                    android:text="@string/share"
-                    android:textColor="@color/color_737373"
-                    android:textSize="@dimen/font_14" />
+                    android:text="@{Html.fromHtml(newsdata.footerTitle)}"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@{fontSize.font14}" />
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
 
+                    <View
+                        android:layout_width="@dimen/dimen_05"
+                        android:layout_height="@dimen/dimen_60"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_marginRight="@dimen/dimen_20"
+                        android:background="@color/color_EA1F25" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/share_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:fontFamily="@font/shruti"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="@dimen/dimen_10"
+                        android:text="@string/share"
+                        android:textColor="@{nighDayColor.gray_text_color}"
+                        android:textSize="@{fontSize.font14}" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
         </RelativeLayout>
+
 
     </RelativeLayout>
 </layout>

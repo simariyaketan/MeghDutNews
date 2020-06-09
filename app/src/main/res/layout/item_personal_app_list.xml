@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView
-        android:id="@+id/txtPersonalAppName"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="categorydata"
+            type="com.meghdut.news.model.category.CategoryData" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_16"
-        android:textColor="@color/color_ffffff"
-        android:background="@drawable/border_rounded_blue_button"
-        android:paddingBottom="@dimen/dimen_10"
-        android:paddingTop="@dimen/dimen_10"
-        android:paddingRight="@dimen/dimen_20"
-        android:paddingLeft="@dimen/dimen_20"
-        android:text="This is a test"
         android:layout_marginRight="@dimen/dimen_20"
-        android:layout_marginBottom="@dimen/dimen_20"/>
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:background="@{categorydata.selected ? @drawable/border_rounded_red : @drawable/border_rounded_gray }">
+
+        <TextView
+            android:id="@+id/txtPersonalAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dimen_20"
+            android:paddingTop="@dimen/dimen_10"
+            android:paddingRight="@dimen/dimen_20"
+            android:paddingBottom="@dimen/dimen_10"
+            android:text="@{categorydata.name}"
+            android:textColor="@{categorydata.selected ? @color/color_ffffff : @color/color_272727 }"
+            android:textSize="@dimen/font_16" />
+    </RelativeLayout>
+
 </layout>

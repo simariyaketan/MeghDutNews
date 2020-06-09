@@ -27,7 +27,7 @@ public class VerticalViewPager extends ViewPager {
     }
 
     private class VerticalPageTransformer implements ViewPager.PageTransformer {
-        private static final float MIN_SCALE = 0.75f;
+        private static final float MIN_SCALE = 0;
         @Override
         public void transformPage(View view, float position) {
 

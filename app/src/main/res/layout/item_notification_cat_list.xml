@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="nighDayColor"
+            type="com.meghdut.news.model.NightDayColor" />
+        <variable
+            name="fontSize"
+            type="com.meghdut.news.model.FontSize" />
+
+        <variable
+            name="notificationData"
+            type="com.meghdut.news.model.category.CategoryData" />
+    </data>
+
     <LinearLayout
+        android:id="@+id/linNotificationMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/dimen_10"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/dimen_10">
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:orientation="horizontal">
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:button="@drawable/notification_checkbox_selector" />
+            android:button="@drawable/notification_checkbox_selector"
+            android:checked="@{notificationData.notification.equals(`yes`) ? true : false}"
+            android:clickable="false" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,9 +38,9 @@
             android:layout_marginLeft="@dimen/dimen_10"
             android:fontFamily="@font/shruti"
             android:includeFontPadding="false"
-            android:text="મુખ્ય સમાચાર"
-            android:textColor="@color/color_000000"
-            android:textSize="@dimen/font_16" />
+            android:text="@{notificationData.name}"
+            android:textColor="@{nighDayColor.black_text_color}"
+            android:textSize="@{fontSize.font16}" />
 
     </LinearLayout>
 </layout>

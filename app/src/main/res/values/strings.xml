@@ -16,6 +16,7 @@
     <!-- Sign Up Screen -->
     <string name="sign_up">SIGN UP</string>
     <string name="name">Name</string>
+    <string name="email_address">Email Address</string>
     <string name="sign_up_with_facebook">Sign up with facebook</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in_small">Sign In</string>
@@ -37,7 +38,7 @@
     <string name="screen_six_detail">રાઇટ સ્વાઇપ કરો ન્યુઝ ડીઇટીલ વાચવા માટે.</string>
     <string name="personal_appliation">વ્યક્તિગત એપ્લિકેશન</string>
     <string name="choose_favorite_news">તમને રસ હોય તેવા સમાચારની પ્રિય શ્રેણીઓ પસંદ કરો.</string>
-    
+
     <!-- Setting Screen -->
     <string name="category">કેટેગરી</string>
     <string name="setting">સેટિંગ્સ</string>
@@ -52,8 +53,34 @@
     <string name="application_cash">એપ્લિકેશન કેશ</string>
     <string name="notification">નોટિફીકેશન્સ</string>
     <string name="stope_notification_time">નોટિફીકેશન્સ બંધ સમય</string>
+    <string name="view_more"><ul>વધુ જોવો</ul></string>
+    <string name="save">સાચવો</string>
+    <string name="subscribe">સબ્સ્ક્રાઇબ કરો</string>
+    <string name="logout">લૉગ આઉટ</string>
+    <string name="yes">હા</string>
+    <string name="no">ના</string>
+    <string name="start_time">પ્રારંભ સમય</string>
+    <string name="end_time">અંત સમય</string>
+    <string name="submit">સબમિટ</string>
+    <string name="favorite_news">પ્રિય સમાચાર</string>
 
     <!-- News Screen -->
     <string name="share">શેર</string>
 
+    <string name="notification_channel_id">4440501605958044197</string>
+
+    <string name="facebook_app_id">350203455957475</string>
+    <string name="fb_login_protocol_scheme">fb350203455957475</string>
+
+
+    <!-- Error Message -->
+    <string name="please_enter_name">Please enter name.</string>
+    <string name="please_enter_mobile_name">Please enter mobile number.</string>
+    <string name="mobile_number_length">Please enter ten digit mobile number.</string>
+    <string name="please_enter_email">Please enter emial address.</string>
+    <string name="please_enter_valid_email">Please enter valid email address.</string>
+    <string name="please_select_start_time">Please select start time</string>
+    <string name="please_select_end_time">Please select end time</string>
+    <string name="please_select_terms_condition">Please check terms and condition.</string>
+    <string name="are_you_sure_logout">તમને ખાતરી છે? શું તમે આ એપ્લિકેશનને લૉગ આઉટ કરવા માંગો છો?</string>
 </resources>
